@@ -1,0 +1,177 @@
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header ">
+            <!-- <h4 class="card-title ">Goods/Services</h4> -->
+            <button class="button" style="float:right; padding: 5px;" data-toggle="modal" *ngIf="role==2" data-target="#customer" [disabled]="!placeable" (click)="goodsSelect()">Place Order</button>
+            <button class="button" style="float:right; padding: 5px;" data-toggle="modal" *ngIf="role==2" data-target="#bulk">Place Bulk Order</button>
+            <!-- <p class="card-category"> Goods/Service Details</p> -->
+        </div>
+        <div class="card-body">
+            <ng-container>
+                <div class="mat-elevation-z8 ">
+                    <div class="table-specification">
+                        <table mat-table [dataSource]="dataSource" class="table-responsive">
+                            <ng-container matColumnDef="select">
+                                <th mat-header-cell *matHeaderCellDef>
+                                    <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()" [indeterminate]="selection.hasValue() && !isAllSelected()" [aria-label]="checkboxLabel()">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;</mat-checkbox>
+                                </th>
+                                <td mat-cell *matCellDef="let element">
+                                    <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(element) : null" [checked]="selection.isSelected(element)" [aria-label]="checkboxLabel(element)">
+                                        &nbsp;&nbsp;&nbsp;&nbsp;</mat-checkbox>
+                                </td>
+                            </ng-container>
+                            <!-- <ng-container matColumnDef="id">
+                                <th mat-header-cell *matHeaderCellDef>Goods/Services ID&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                <td mat-cell *matCellDef="let element" > {{element.id}}&nbsp;&nbsp;&nbsp;&nbsp;
+                                </td>
+                            </ng-container> -->
+                            <ng-container matColumnDef="name">
+                                <th mat-header-cell *matHeaderCellDef> Name&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                <td mat-cell *matCellDef="let element"> {{element.name}}&nbsp;&nbsp;&nbsp;&nbsp;
+                                </td>
+                            </ng-container>
+                            <!-- <ng-container matColumnDef="unit">
+                                <th mat-header-cell *matHeaderCellDef> Unit&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                <td mat-cell *matCellDef="let element"> {{element.unit}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            </ng-container> -->
+                            <ng-container matColumnDef="creator">
+                                <th mat-header-cell *matHeaderCellDef>Creator&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                <td mat-cell *matCellDef="let element"> {{element.creator}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            </ng-container>
+                            <ng-container matColumnDef="vname">
+                                <th mat-header-cell *matHeaderCellDef>Vendor Name&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                <td mat-cell *matCellDef="let element"> {{element.vname}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            </ng-container>
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                        </table>
+                    </div>
+                    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" #customer id="customer">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document" style="z-index:11;">
+        <div class="modal-content ">
+            <!--Header-->
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Place Order</h5>
+                <button type="button" class="close" data-dismiss="modal" (click)="goodsEmpty()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <!--Body-->
+            <div class="modal-body">
+                <form [formGroup]="orderDetails">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="row" style="position: relative;width: 100%;padding-right: 15px;padding-left: 15px;">
+                                <div>
+                                    <label for="goodsService1">Goods&Services</label>
+                                    <table class="tab_model" style="width:100%;word-break: break-word;padding: 5px">
+                                        <tr style="font-weight: 300;">
+                                            <td style="padding: 5px">Name</td>
+                                            <td>Quantity</td>
+                                            <td>Rate</td>
+                                        </tr>
+                                        <tr *ngFor="let g of selectedOrder;let i=index">
+                                            <td style="padding: 5px"> {{g.name}} </td>
+                                            <!-- <td> <input type="number" class="form-control" (keyup.enter)=" getquantity($event,i)" (blur)=" getquantity($event,i)" placeholder="Quantity" value="{{g.quantity}}" /> </td> -->
+                                            <td> <input type="number" class="form-control" (keyup.enter)=" getquantity($event,i)" (blur)=" getquantity($event,i)" placeholder="Quantity" value="{{g.quantity}}" /> </td>
+                                            <td> <input type="number" (keyup.enter)=" getrate($event,i)" (blur)=" getrate($event,i)" class="form-control" placeholder="Rate" value="{{g.rate}}"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-12">
+                            <div class="form-group">
+                                <label for="orderNumber1">Order Number</label>
+                                <input type="text" formControlName="orderNumber" class="form-control" id="orderNumber1" placeholder="Enter Order Number">
+                            </div>
+                            <div formGroupName="customer">
+                                <div class="form-group">
+                                    <label for="addressShipping1">Shipping Address</label>
+                                    <input type="text" id="addressShipping1" formControlName="addressShipping" class="form-control" placeholder="Enter Shipping Address">
+                                </div>
+                                <div class="form-group">
+                                    <label for="addressBilling1">Billing Address</label>
+                                    <input type="text" id="addressBilling1" formControlName="addressBilling" class="form-control" placeholder="Enter Billing Address">
+                                </div>
+                                <div class="form-group">
+                                    <label for="GSTNumber1">GST Number</label>
+                                    <input type="text" id="GSTNumber1" disabled formControlName="GSTNumber" class="form-control" placeholder="Enter GST Number" value="{{gstNo}}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-12 col-sm-12">
+                            <div class="form-group">
+                                <label for="PO_Number1">Purchase Order Number</label>
+                                <input type="text" formControlName="PO_Number" class="form-control" id="PO_Number1" placeholder="Enter Purchase Order Number">
+                            </div>
+                            <div class="form-group">
+                                <label for="PO_Date1">Purchase Order Date</label>
+                                <input type="date" formControlName="PO_Date" class="form-control" id="PO_Date" placeholder="Enter Purchase Order Date">
+                            </div>
+                            <div class="form-group">
+                                <label for="orderDate1">Order Date</label>
+                                <input type="date" formControlName="orderDate" class="form-control" id="orderDate1" placeholder="Enter Order Date">
+                            </div>
+                            <div class="form-group">
+                                <label for="orderAmount1">Order Amount</label>
+                                <input type="text" formControlName="orderAmount" disabled class="form-control" id="orderAmount1" placeholder="Enter Order Amount" value="{{good_total}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="comment1">Comment</label>
+                                <input type="text" formControlName="comment" class="form-control" id="comment1" placeholder="Enter Comment">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="row" style="margin-right:10px;">
+                    
+                    <div class="col-sm-4" style="margin-bottom:10px; margin-top: 10px;">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                    <div class="col-sm-6 col-md-8" style="margin-bottom:10px;margin-top: 10px;">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="placeOrder()" [disabled]="!orderDetails.valid || good_total==0">Place Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="bulk">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="z-index:11;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Place Bulk Order</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!-- <p for="input" style="float:left;">Bulk Registration</p> -->
+                        <input type="file" class="upload " (change)="updateFileData($event.target.files)" accept=".csv">
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="bulkRegister()" [disabled]="!bulkUploadAction">Add</button>
+            </div>
+        </div>
+    </div>
+</div>

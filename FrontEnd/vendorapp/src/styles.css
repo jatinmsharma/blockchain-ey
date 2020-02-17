@@ -1,0 +1,27 @@
+.modal-header {
+    background-color: #8be88f;
+    color: white
+}
+.mat-sort-header-container {
+    display: flex;
+    cursor: pointer;
+    font-weight: 700;
+    align-items: center;
+    font-size: 15px;
+}
+th.mat-header-cell {
+    padding: 0;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #96b9f2;
+}
+.nav-pills .nav-link.active:hover, .nav-pills .show>.nav-link:hover {
+    color: #fff;
+    background-color: #96b9f2;
+}

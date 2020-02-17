@@ -1,0 +1,124 @@
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header card-header-danger">
+            <!-- <h4 class="card-title ">Goods/Services</h4> -->
+            <button class="button" style="float:right; padding: 5px;" *ngIf="role == 2 " data-toggle="modal" data-target="#bulk">Add Multiple Services</button>
+            <button class="button" data-toggle="modal" data-target="#customer" *ngIf="role == 2 " style="float:right; padding: 5px">Add
+                Services</button>
+
+            <!-- <p class="card-category"> Goods/Service Details</p> -->
+        </div>
+        <div class="card-body">
+            <ng-container>
+                <div class="mat-elevation-z8 ">
+                    <div class="table-specification">
+                        <table mat-table [dataSource]="dataSource" class="table-responsive">
+
+                            <!-- <ng-container matColumnDef="id">
+                                <th mat-header-cell *matHeaderCellDef> Goods ID </th>
+                                <td mat-cell *matCellDef="let element"> {{element.id}}&nbsp;&nbsp;&nbsp;&nbsp;
+                                </td>
+                            </ng-container> -->
+                            <ng-container matColumnDef="name">
+                                <th mat-header-cell *matHeaderCellDef> Name </th>
+                                <td mat-cell *matCellDef="let element"> {{element.name}}&nbsp;&nbsp;&nbsp;&nbsp;
+                                </td>
+                            </ng-container>
+                            <!-- <ng-container matColumnDef="unit">
+                                <th mat-header-cell *matHeaderCellDef> Unit </th>
+                                <td mat-cell *matCellDef="let element"> {{element.unit}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            </ng-container> -->
+                            <ng-container matColumnDef="creator">
+                                <th mat-header-cell *matHeaderCellDef>Creator</th>
+                                <td mat-cell *matCellDef="let element"> {{element.creator}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            </ng-container>
+                            <!-- <ng-container matColumnDef="vname">
+                                <th mat-header-cell *matHeaderCellDef>Vendor Name</th>
+                                <td mat-cell *matCellDef="let element"> {{element.vname}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            </ng-container> -->
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                        </table>
+                    </div>
+                    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="customer">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="z-index:11;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Create Goods/Service</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="registerGoods">
+
+                    <div class="form-group">
+                        <label for="ty">Select Type</label>
+                        <select class="form-control" formControlName="servicetype" id="role1">
+                            <option *ngFor="let rr of Roles" [value]="rr.value">{{rr.role}}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="publicKey1">Goods/Service Name </label>
+                        <input type="text" formControlName="name" class="form-control" id="ename1" aria-describedby="ethHelp" value="" placeholder="Enter Goods/ServiceName">
+
+                    </div>
+                    <!-- <div class="form-group">
+                        <label for="ship">Goods/Service Unit</label>
+                        <input type="text" formControlName="unit" class="form-control" id="ship1" placeholder="Enter Goods/Serice Unit">
+                    </div> -->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <div class="row">
+                    <!-- <div class="col-lg-7 col-sm-7" style="margin-bottom:10px;"> -->
+                        <!-- <label style="float:left">Place Bulk Order</label>
+                        <input type="file" class="upload " (change)="changeListener($event.target.files)" accept=".csv" style="float:left;" /> -->
+                    <!-- </div> -->
+                    <div class="col-sm-5" style="margin-bottom:10px; margin-top: 10px;">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                    <div class="col-sm-6" style="margin-bottom:10px;margin-top: 10px;">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" if='!registerGoods.valid' [disabled]="!registerGoods.valid" (click)="createGoods()">Create</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="bulk">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="z-index:11;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Multiple Service Addition</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!-- <p for="input" style="float:left;">Bulk Registration</p> -->
+                        <input type="file" class="upload " (change)="updateFileData($event.target.files)" accept=".csv">
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="bulkRegister()" [disabled]="!bulkUploadAction">Add</button>
+            </div>
+        </div>
+    </div>
+</div>

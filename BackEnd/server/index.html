@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Sawtooth Asset Chain</title>
+  <link rel="icon" href="favicon.png" type="image/gif">
+
+  <!-- require jquery and bootstrap scripts -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- adding style here -->
+  <style type="text/css">
+    header {
+      background-color: lightgray;
+      font-size: 20px;
+      padding: 15px;
+    }
+
+    header,
+    .form-group {
+      margin-bottom: 3%;
+    }
+
+    #body {
+      margin-left: 3%;
+    }
+
+    .form-control {
+      margin: 8px;
+    }
+
+    #left_header {
+      margin-left: 0;
+      width: 45%;
+      display: inline-block;
+    }
+
+    #left-column {
+      display: inline-block;
+    }
+
+    #data {
+      display: inline-block;
+      width: 45%;
+      vertical-align: top;
+      margin-left: 2%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div id="left_header">Sawtooth Asset Chain</div>
+  </header>
+
+  <div id="body">
+    <div class="form-group">
+      <label>Select Holder</label>
+      <select class="form-control" name="keySelect">
+        <option value="none" selected>Select public key...</option>
+        <option value="new">Create new key pair</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Create Bytecode</label>
+      <input id="createName" class="form-control" type="text" placeholder="Enter asset name...">
+      <select>
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option>
+      </select>
+    </div>
+    <!-- <div class="form-group">
+        <label>Create Asset Record</label>
+        <input id="createName" class="form-control" type="text" placeholder="Enter asset name...">
+        <input id="createSubmit" type="button" value="Create" class="btn btn-primary">
+      </div>
+
+      <div class="form-group">
+        <label>Transfer Asset</label>
+        <select class="form-control" name="assetSelect">
+          <option value="none" selected>Select Asset...</option>
+        </select>
+        <select class="form-control" name="transferSelect">
+          <option value="none" selected>Select recipient...</option>
+        </select>
+        <input id="transferSubmit" type="button" value="Transfer" class="btn btn-primary">
+      </div>
+
+      <div class="form-group">
+        <label>Accept Asset</label>
+        <div id="transferList"></div>
+      </div>
+    </div>
+
+    <div id="data">
+      <label>Asset List</label>
+      <table class="table table-hover">
+        <tr>
+          <th>Asset</th>
+          <th>Holder</th>
+        </tr>
+        <tbody id="assetList"></tbody>
+      </table>
+    </div> -->
+  </div>
+
+  <script src="dist/bundle.js"></script>
+</body>
+
+</html>

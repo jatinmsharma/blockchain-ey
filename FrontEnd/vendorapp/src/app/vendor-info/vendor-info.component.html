@@ -1,0 +1,282 @@
+<div class="vendor">
+    <div>
+        <h5 style="text-align: center;">Welcome Vendor</h5>
+    </div><br>
+    <div style="text-align:center;height:150px;">
+        <img src="/assets/profile.png">
+    </div>
+    <div class="row info">
+        <div class="col-md">
+            <div class="field-group mt-5">
+                <div class="field-header">
+                    <span class="h5 mr-3">Full Name</span>
+                </div>
+                <div class="field-info">{{name | uppercase }}</div>
+            </div>
+        </div>
+        <div class="col-md">
+            <div class="field-group mt-5">
+                <div class="field-header">
+                    <span class="h5 mr-3">Email</span>
+                </div>
+                <div class="field-info">{{email}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="row info">
+        <div class="col-md">
+            <div class="field-group mt-5">
+                <div class="field-header">
+                    <span class="h5 mr-3">Address</span>
+                </div>
+                <div id="fullAddress">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row info">
+        <div class="col-md">
+            <div class="field-group mt-5">
+                <div class="field-header">
+                    <span class="h5 mr-3">Public Key</span>
+                    <span class="mx-3" (click)="showKey(1)">
+                        <svg version="1.1" width="16" height="16" viewBox="0 0 16 16" class="octicon octicon-eye"
+                            aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z">
+                            </path>
+                        </svg>
+                    </span>
+                </div>
+                <div class="field-info">{{publicKeyHide}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="row info">
+        <div class="col-md">
+            <div class="field-group mt-5">
+                <div class="field-header">
+                    <span class="h5 mr-3">Private Key</span>
+                    <span class="mx-3" (click)="showKey(2)">
+                        <svg version="1.1" width="16" height="16" viewBox="0 0 16 16" class="octicon octicon-eye"
+                            aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z">
+                            </path>
+                        </svg>
+                    </span>
+                    <span class="mx-3" (click)="download()">
+                        <svg version="1.1" width="16" height="16" viewBox="0 0 16 16"
+                            class="octicon octicon-cloud-download" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M9 12h2l-3 3-3-3h2V7h2v5zm3-8c0-.44-.91-3-4.5-3C5.08 1 3 2.92 3 5 1.02 5 0 6.52 0 8c0 1.53 1 3 3 3h3V9.7H3C1.38 9.7 1.3 8.28 1.3 8c0-.17.05-1.7 1.7-1.7h1.3V5c0-1.39 1.56-2.7 3.2-2.7 2.55 0 3.13 1.55 3.2 1.8v1.2H12c.81 0 2.7.22 2.7 2.2 0 2.09-2.25 2.2-2.7 2.2h-2V11h2c2.08 0 4-1.16 4-3.5C16 5.06 14.08 4 12 4z">
+                            </path>
+                        </svg>
+                    </span>
+                </div>
+                <div class="field-info">{{privateKeyHide}}</div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <div class="row">
+        <!-- <div class="col-sm-3" style="display:block;">
+                <div style="padding-right: 0px;">
+                    <p for="input" style="float:left;">Bulk Registration For Employee</p>
+                    <input type="file" class="upload " (change)="changeListener($event.target.files)" accept=".csv">
+               </div>
+                </div> -->
+        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-2">
+
+            <button class="button" data-toggle="modal" data-target="#register" (click)="clearModel($event)">Register Employee</button>
+        </div>
+        <div class="col-sm-2">
+
+            <button class="button" data-toggle="modal" data-target="#bulk">Bulk Registration</button>
+        </div>
+        <!-- <div class="col-sm-3" style="display:block;">
+                <p for="input" style="float:left;">Bulk Registration For Customer</p>
+                <input type="file" class="upload " (change)="changeListener($event.target.files)" accept=".csv">
+            </div> -->
+        <div class="col-sm-2">
+            <button class="button" data-toggle="modal" data-target="#customer" (click)="clearModel($event)">Add Costumer</button>
+        </div>
+        <div class="col-sm-3">
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="register">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="z-index:11;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Register Employee</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="registerUser">
+                    <div class="form-group">
+                        <label for="Name1">Name</label>
+                        <input type="text" formControlName="name" class="form-control" id="Name1" aria-describedby="nameHelp" placeholder="Enter Name">
+                        <!-- <small id="nameHelp" class="form-text text-muted">Name must be under 16 char.</small> -->
+                    </div>
+                    <div class="form-group">
+                        <label for="publicKey1">Public Key</label>
+                        <input type="text" formControlName="employeeAddress" class="form-control" id="publicKey1" aria-describedby="ethHelp" placeholder="Enter Employee's Public Key">
+                        <small id="ethHelp" class="form-text text-muted">Please provide user valid public key.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="email1">Email</label>
+                        <input type="email" formControlName="email" class="form-control" id="email1" placeholder="Enter Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact1">Contact</label>
+                        <input type="text" formControlName="contactNumber" class="form-control" id="contact1" placeholder="Enter Contact Number">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="role1">Select Role</label>
+                        <select class="form-control" formControlName="role" id="role1">
+                            <option *ngFor="let rr of Roles" [value]="rr.value">{{rr.role}}</option>
+                        </select>
+                    </div>
+                    <!-- <button type="submit" [disabled]="!registerUser.valid" class="btn btn-primary">Submit</button> -->
+                </form>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="registeremployee()" [disabled]="!registerUser.valid">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal: customer -->
+
+<div class="modal fade" id="customer">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="z-index:11;">
+        <div class="modal-content">
+            <!--Header-->
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Register Customer</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <!--Body-->
+            <div class="modal-body">
+                <form [formGroup]="addCustomer">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" formControlName="name" class="form-control" id="name" placeholder="Enter Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email1">Email</label>
+                        <input type="email" formControlName="email" class="form-control" id="email1" placeholder="Enter Valid Email ID">
+                    </div>
+                    <!-- <div class="form-group">
+                        <label for="contact1">Address</label>
+                        <input type="text" formControlName="address" class="form-control" id="address1" placeholder="Enter Address">
+                    </div>
+                -->
+                    <div class="form-group">
+                        <label style="margin-left:3%;">Address:</label>
+                    </div>
+                    <div id="fullAddress" style="margin-left: 10px;margin-right: 10px;">
+                        <div class="form-group ">
+                            <div class="row form-group">
+                                <label style="margin-left:0;font-size: 20px">Line No. 1</label>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-11 col-md-11" style="display:inline-block;"><input style="width:100%;" (keyup.enter)="getValueRg($event)" (blur)="getValueRg($event)" class="form-control" placeholder="Enter Address" id="firstAddressLine" />
+                                </div>
+                                <!-- <div class="col-xs-1 col-md-1" style="display:inline-block;" ></div> -->
+                                <div class="col-xs-1 col-md-1" style="display:inline-block;"><button class="tagbutton" (click)="addTag()"><i class="fa fa-plus" aria-hidden="true"></i></button></div>
+                            </div>
+                        </div>
+                        <div class="form-group " *ngFor="let h of tagarr;let i= index ">
+                            <div class="row form-group">
+                                <label style="margin-left:3%;"> Line No. {{i+2}}</label>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-11 col-md-11" style="display:inline-block;"><input style="width:100%;" class="form-control" (keyup.enter)="getValueRg($event)" (blur)="getValueRg($event)" placeholder="Enter Line No. {{i+1}}" /></div>
+                                <div class="col-xs-1 col-md-1" style="display:inline-block;"><button class="tagbutton" (click)="dltTags(i)"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="city1">City</label>
+                            <input type="text" formControlName="city" class="form-control" id="city1" placeholder="Enter City Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="state1">State</label>
+                            <input type="text" formControlName="state" class="form-control" id="state1" placeholder="Enter State Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="pincode1">Pincode</label>
+                            <input type="text" formControlName="pincode" class="form-control" id="pincode1" placeholder="Enter Pincode">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact1">Contact No.</label>
+                        <input type="text" formControlName="contactNumber" class="form-control" id="contact1" placeholder="Enter Contact Number">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="GSTNumber">GST Number</label>
+                        <input type="text" formControlName="GSTNumber" class="form-control" id="gst1" placeholder="Enter GST Number">
+                    </div>
+                    <div class="form-group">
+                        <label for="publicKey">Public Key</label>
+                        <input type="text" formControlName="publicKey" class="form-control" id="publicKey1" placeholder="Enter Customer's Public Key">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="addcustomer()" [disabled]="!addCustomer.valid">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="bulk">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="z-index:11;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Bulk Registration</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="form-control">
+                <input (click)="addTags($event)" ng-model="bulkUploadAction" id="employeeRadio" type="radio" name="rgresult" />Employee
+                <input (click)="addTags($event)" ng-model="bulkUploadAction" id="customerRadio" type="radio" name="rgresult" />Customer
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!-- <p for="input" style="float:left;">Bulk Registration</p> -->
+                        <input type="file" class="upload " (change)="updateFileData($event.target.files)" accept=".csv">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="bulkRegister()" [disabled]="!bulkupload">Add</button>
+            </div>
+        </div>
+    </div>
+</div>

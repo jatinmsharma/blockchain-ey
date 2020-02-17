@@ -1,0 +1,374 @@
+<div class="col-md-12">
+    <div class="card">
+        <!-- <div class="card-header card-header-danger">
+            <div class="card-title ">
+                <h4>Orders</h4>
+            </div>
+            <p class="card-category"> Order Details</p>
+            <div class="card-category">
+    </div>
+</div> -->
+        <div class="card-body">
+            <ng-container>
+                <div class="mat-elevation-z8 ">
+                    <div class="table-specification">
+                        <table mat-table [dataSource]="dataSource" matSort class="table-responsive">
+                            <!-- <ng-container matColumnDef="id">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+                                <td mat-cell *matCellDef="let element;let i=index"><a href="#" data-toggle="modal" data-target="#register" (click)="getdata(element)">{{element.ID}}</a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            </ng-container> -->
+                            <ng-container matColumnDef="orderNumber">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                                    Order Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                <!-- <td mat-cell *matCellDef="let element"> {{element.orderNumber}}&nbsp;&nbsp;&nbsp;&nbsp;</td> -->
+                                <td mat-cell *matCellDef="let element;let i=index"><a href="#" data-toggle="modal" data-target="#register" (click)="getdata(element)">{{element.orderNumber}}</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                                </td>
+                            </ng-container>
+                            <ng-container matColumnDef="PO_Date">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> PO Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </th>
+                                <td mat-cell *matCellDef="let element"> {{element.PO_Date}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            </ng-container>
+                            <ng-container matColumnDef="PO_Number">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header> PO Number&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </th>
+                                <td mat-cell *matCellDef="let element"> {{element.PO_Number}}&nbsp;&nbsp;&nbsp;&nbsp;
+                                </td>
+                            </ng-container>
+                            <ng-container matColumnDef="orderAmount">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                                    Order Amount&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                <td mat-cell *matCellDef="let element"> {{element.orderAmount}}&nbsp;&nbsp;&nbsp;&nbsp;
+                                </td>
+                            </ng-container>
+                            <ng-container matColumnDef="orderDate">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header>Order Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                </th>
+                                <td mat-cell *matCellDef="let element"> {{element.orderDate}} &nbsp;&nbsp;&nbsp;&nbsp;
+                                </td>
+                            </ng-container>
+                            <ng-container matColumnDef="orderHandler">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                                    Order Handler&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                <td mat-cell *matCellDef="let element"> {{element.orderHandler}}&nbsp;&nbsp;&nbsp;&nbsp;
+                                </td>
+                            </ng-container>
+
+                            <ng-container matColumnDef="owner">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                                    Owner&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                <td mat-cell *matCellDef="let element"> {{element.owner}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            </ng-container>
+                            <ng-container matColumnDef="globalStatus">
+                                <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                                    Order Status&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                <td mat-cell *matCellDef="let element">
+                                    {{element.globalStatus}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            </ng-container>
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                        </table>
+                    </div>
+                    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>
+
+<!-- Modal: modalCart -->
+
+<div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+
+            <!--Header-->
+
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Order Details</h4>
+
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+
+            </div>
+
+            <!-- <div class="row">
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="button" class="btn btn-outline-primary" *ngIf="orderStatus=='2' "><a data-toggle="modal"
+            data-target="#customer">accept</a> </button>&nbsp;
+                <button type="button" class="btn btn-outline-primary" *ngIf="orderStatus=='2' " (click)="updateOrderStatus(orderNumber,'return')">Return </button>
+            </div> -->
+            <!--Body-->
+
+            <div class="modal-body">
+                <!-- <div class="row tab_model" style="margin-left:auto;margin-right: auto;" *ngIf="orderStatusPayment!='2'">
+                    <div class="col-sm-8">
+                        <label>Update Delegator's Public Key</label>
+                        <input type="text" name="Enter Comment" (keyup)="search()" id="userNameSearch" style="margin-bottom:5px;width:100%" placeholder="Enter Delegator's Name">
+                        <input type="text" *ngIf="isDelegatorSelected" [(ngModel)]="newOwnerPublicKey">
+                    </div>
+                    <div class="col-sm-4" style="padding-top:20px;">
+                        <button class="button" (click)="transferOwnerShip()">Update
+                            Handler</button>
+                    </div>
+                </div> -->
+                <hr> 
+                <div class="row">
+                    <div class="col-sm-12 col-xl-6">
+
+
+                        <table class="table table-hover tab_model" style="width:100%;word-break: break-word;">
+
+                            <tbody>
+                                <tr *ngIf="pp?.orderNumber">
+                                    <td>Order Number</td>
+                                    <td>
+                                        <p>{{pp?.orderNumber}}</p>
+                                    </td>
+                                </tr>
+                                <tr *ngIf="pp?.PO_Number">
+
+                                    <td>PO Number</td>
+                                    <td>{{pp?.PO_Number}}</td>
+                                </tr>
+                                <tr *ngIf="pp?.PO_Date">
+                                    <td>PO Date</td>
+                                    <td>{{pp?.PO_Date}}</td>
+                                </tr>
+                                <tr *ngIf="pp?.orderAmount">
+                                    <td>Order Amount</td>
+                                    <td>{{pp?.orderAmount}}</td>
+                                </tr>
+                                <tr *ngIf="pp?.orderDate">
+                                    <td>Order Date</td>
+                                    <td>
+                                        <p>{{pp?.orderDate}}</p>
+                                    </td>
+                                </tr>
+
+                                <tr *ngIf="pp?.orderHandler">
+                                    <td>Order Handler</td>
+                                    <td>
+                                        <p>{{pp?.orderHandler}}</p>
+                                    </td>
+                                </tr>
+                                <tr *ngIf="pp?.salesServiceTaxAmount">
+                                    <td>Sales Service TaxAmount</td>
+                                    <td>
+                                        <p>{{pp?.salesServiceTaxAmount}}</p>
+                                    </td>
+                                </tr>
+                                <tr *ngIf="pp?.owner">
+                                    <td>Owner</td>
+                                    <td>
+                                        <p>{{pp?.owner}}</p>
+                                    </td>
+                                </tr>
+                                <tr *ngIf="pp?.vendor?.name">
+                                    <td>Vendor Name</td>
+                                    <td>
+                                        <p>{{pp?.vendor?.name}}</p>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <table class="table table-hover tab_model" *ngIf="pp?.goodsService.length" style="width:100%;word-break: break-word;">
+                            <tr>
+                                <td>Goods</td>
+                                <td>
+                                    <table>
+                                        <tr style="font-weight: 300;">
+                                            <td>Name</td>
+                                            <td>Quantity</td>
+                                            <td>Rate</td>
+                                            <td>Discount</td>
+                                        </tr>
+                                        <tr *ngFor="let g of pp?.goodsService">
+                                            <td>{{g.name}}</td>
+                                            <td>{{g.quantity}}</td>
+                                            <td>{{g.rate}}</td>
+                                            <td>{{g.discount}}</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <div class="col-sm-6 col-xl-6">
+
+                        <div *ngIf="pp?.orderStatus?.comment || pp?.orderStatus?.employeeID" class="row tab_model" style="margin-left:auto;margin-right: auto;">
+                            <div class="col-lg-3">
+                                <p>Order Status</p>
+                            </div>
+                            <div class="col-lg-9">
+                                <div *ngIf="pp?.orderStatus?.comment" class="row">
+                                    <div class="col-lg-4">
+                                        <p>Comment:</p>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <p>{{pp?.orderStatus?.comment}}</p>
+                                    </div>
+                                    <hr>
+
+                                </div>
+                                <div *ngIf="pp?.orderStatus?.employeeID" class="row">
+                                    <div class="col-lg-4">
+                                        <p>Employee Id :</p>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <p>{{pp?.orderStatus?.employeeID}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div *ngIf="pp?.customer?.ID || pp?.customer?.addressBilling || pp?.customer?.addressShipping || pp?.customer?.employeeID" class="row tab_model" style="margin-left:auto;margin-right: auto;">
+                            <div class="col-lg-3">
+                                <p>Customer</p>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="row" *ngIf="pp?.customer?.ID">
+                                    <div class="col-lg-4">
+                                        <p>ID :</p>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <p>{{pp?.customer?.ID}}</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row" *ngIf="pp?.customer?.addressBilling">
+                                    <div class="col-lg-4">
+                                        <p>Address Billing :</p>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <p>{{pp?.customer?.addressBilling}}</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row" *ngIf="pp?.customer?.addressShipping">
+                                    <div class="col-lg-4">
+                                        <p>Address Shipping :</p>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <p>{{pp?.customer?.addressShipping}}</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div class="row" *ngIf="pp?.customer?.employeeID">
+                                    <div class="col-lg-4">
+                                        <p>Employee ID :</p>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <p>{{pp?.customer?.employeeID}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row tab_model" *ngIf="pp?.orderPayment?.invoiceAmount || pp?.orderPayment?.invoiceDate ||pp?.orderPayment?.invoiceNumber|| pp?.orderPayment?.status?.comment||pp?.orderPayment?.status?.updater" sstyle="margin-left:auto;margin-right: auto;">
+                            <div class="col-lg-3">
+                                <p>Order Payment</p>
+                            </div>
+                            <div class="col-lg-9">
+                                <div *ngIf="pp?.orderPayment?.invoiceAmount" class="row">
+                                    <div class="col-lg-4">
+                                        <p>Invoice Amount :</p>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <p>{{pp?.orderPayment?.invoiceAmount}}</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div *ngIf=" pp?.orderPayment?.invoiceDate " class="row">
+                                    <div class="col-lg-4">
+                                        <p>Invoice Date :</p>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <p>{{pp?.orderPayment?.invoiceDate}}</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div *ngIf="pp?.orderPayment?.invoiceNumber" class="row">
+                                    <div class="col-lg-4">
+                                        <p>Invoice Number :</p>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <p>{{pp?.orderPayment?.invoiceNumber}}</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div *ngIf="pp?.orderPayment?.status?.comment" class="row">
+                                    <div class="col-lg-4">
+                                        <p>Status Comment :</p>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <p>{{pp?.orderPayment?.status?.comment}}</p>
+                                    </div>
+                                </div>
+                                <hr>
+                                <div *ngIf="pp?.orderPayment?.status?.updater" class="row">
+                                    <div class="col-lg-4">
+                                        <p>Status updater :</p>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <p>{{pp?.orderPayment?.status?.updater}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="customer" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!--Header-->
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Accept Order</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <!--Body-->
+            <div class="modal-body">
+                <table class="table table-hover">
+                    <tbody>
+                        <tr>
+                            <td>Comment</td>
+                            <td><input type="text" name="Enter Comment" [(ngModel)]="statusComment"></td>
+                            <td><a><i class="fas fa-times"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td>Sales Service TaxAmount</td>
+                            <td><input type="text" name="Enter Employee Name" [(ngModel)]="salesServiceTaxAmountUpdate">
+                            </td>
+                            <td><a><i class="fas fa-times"></i></a></td>
+                        </tr>
+                        <tr>
+                            <td>Discount</td>
+                            <td><input type="text" name="" [(ngModel)]="goodsServicesDiscount"></td>
+                            <td><a><i class="fas fa-times"></i></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--Footer-->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
+                <button class="btn btn-primary" (click)="updateOrderStatus($event,orderNumber,'accept') "> Place
+                    Order</button>
+            </div>
+        </div>
+    </div>
+</div>

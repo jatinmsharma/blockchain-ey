@@ -1,0 +1,258 @@
+<div class="col-md-12">
+  <div class="card">
+      <div class="card-header card-header-danger">
+          <h4 class="card-title ">Orders</h4>
+          <button class="button" data-toggle="modal" data-target="#customer" style="float:right;">Place Order</button>
+          <p class="card-category"> Order Details</p>
+      </div>
+      <div class="card-body">
+          <div class="table-responsive">
+              <table class="table table-hover">
+                  <thead class="text-primary">
+                      <th>
+                          Order No.
+                      </th>
+                      <th>
+                          Vendor Name
+                      </th>
+                      <th>
+                          Employee Name
+                      </th>
+                      <th>
+                          Shipping Address
+                      </th>
+                      <th>
+                          Billing Address
+                      </th>
+                      <th>
+                          GST NO.
+                      </th>
+                  </thead>
+                  <tbody id="employeeList">
+                    <tr>
+                      <td><a href="#" data-toggle="modal" data-target="#register"   >o0101</a></td>
+                      <td>celebal</td>
+                      <td>EYAdmin1</td>
+                      <td>Jaipur</td>
+                      <td>Jaipur</td>
+                      <td>GST1010</td>
+                    </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- <div class="col-sm-4">
+<button class="button" data-toggle="modal" data-target="#customer">Add Costumer</button>
+</div> -->
+
+
+<!-- Modal -->
+<!-- Modal: modalCart -->
+<div class="modal fade" id="customer" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+  <!--Header-->
+  <div class="modal-header">
+    <h4 class="modal-title" id="myModalLabel">Create Order</h4>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <!--Body-->
+  <div class="modal-body">
+
+    <table class="table table-hover">
+
+      <tbody>
+    
+        <tr>
+
+          <td>Vendor Name</td>
+          <td><input type="text" name="Enter Vendor Name"></td>
+          <td><a><i class="fas fa-times"></i></a></td>
+        </tr>
+        <tr>
+          <td>Employee Name</td>
+          <td><input type="text" name="Enter Employee Name"></td>
+          <td><a><i class="fas fa-times"></i></a></td>
+        </tr>
+        <tr>
+          <td>Shipping Address</td>
+          <td><input type="text" name="Enter Shipping Address"></td>
+          <td><a><i class="fas fa-times"></i></a></td>
+        </tr>
+        <tr>
+          <td>Billing Address</td>
+          <td><input type="text" name="Enter Billing Address "></td>
+          <td><a><i class="fas fa-times"></i></a></td>
+        </tr>
+        <tr>
+          <td>GST NO.</td>
+          <td><input type="text" name="Enter GST NO."></td>
+          <td><a><i class="fas fa-times"></i></a></td>
+        </tr>
+        <tr>
+          <td>PO Number</td>
+          <td><input type="text" name="Enter PO Number"></td>
+          <td><a><i class="fas fa-times"></i></a></td>
+        </tr>      
+        <tr>
+          <td>Order Amount</td>
+          <td><input type="text" name="Enter Order amount"></td>
+          <td><a><i class="fas fa-times"></i></a></td>
+        </tr>
+      
+      
+        <!-- <tr class="total">
+          <td>Role</td>
+          <td><input type="text" name="role"></td>
+          <td></td>
+        </tr>
+        <tr class="total">
+          <td>Employee Address</td>
+          <td><input type="text" name="Role"></td>
+          <td></td>
+        </tr> -->
+      </tbody>
+    </table>
+
+  </div>
+  <!--Footer-->
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
+    <button class="btn btn-primary">Place Order</button>
+  </div>
+</div>
+</div>
+</div>
+<!-- customer Model -->
+
+<!-- Modal -->
+<!-- Modal: modalCart -->
+<div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+  <!--Header-->
+  <div class="modal-header">
+    <h4 class="modal-title" id="myModalLabel">Order Details</h4>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <!--Body-->
+  <div class="modal-body">
+
+    <table class="table table-hover">
+
+      <tbody>
+        <tr>
+          <td>Order No.</td>
+          <td>o0101</td>
+          <td><a><i class="fas fa-times"></i></a></td>
+        </tr>
+        <tr>
+
+          <td>Vendor Name</td>
+          <td>celebal</td>
+          <td><a><i class="fas fa-times"></i></a></td>
+        </tr>
+        <tr>
+          <td>Employee Name</td>
+          <td>EYAdmin1</td>
+          <td><a><i class="fas fa-times"></i></a></td>
+        </tr>
+        <tr>
+          <td>Shipping Address</td>
+          <td>jaipur</td>
+          <td><a><i class="fas fa-times"></i></a></td>
+        </tr>
+        <tr>
+          <td>Billing Address</td>
+          <td>jaipur</td>
+          <td><a><i class="fas fa-times"></i></a></td>
+        </tr>
+        <tr>
+          <td>GST NO.</td>
+          <td>GST1010</td>
+          <td><a><i class="fas fa-times"></i></a></td>
+        </tr>
+        <tr>
+          <td>PO Number</td>
+          <td>PO10110</td>
+          <td><a><i class="fas fa-times"></i></a></td>
+        </tr>
+        <tr>
+          <td>PO Date</td>
+          <td>23/01/2019</td>
+          <td><a><i class="fas fa-times"></i></a></td>
+        </tr>
+        <tr>
+          <td>Order Date</td>
+          <td>23/01/2019</td>
+          <td><a><i class="fas fa-times"></i></a></td>
+        </tr>
+        <tr>
+          <td>Order Amount</td>
+          <td>300000</td>
+          <td><a><i class="fas fa-times"></i></a></td>
+        </tr>
+        <tr>
+          <td>Order Status</td>
+          <td>1</td>
+          <td><a><i class="fas fa-times"></i></a></td>
+        </tr>
+        <tr>
+          <td>Comment</td>
+          <td>Order Placed</td>
+          <td><a><i class="fas fa-times"></i></a></td>
+        </tr>
+        <!-- <tr class="total">
+          <td>Role</td>
+          <td><input type="text" name="role"></td>
+          <td></td>
+        </tr>
+        <tr class="total">
+          <td>Employee Address</td>
+          <td><input type="text" name="Role"></td>
+          <td></td>
+        </tr> -->
+      </tbody>
+    </table>
+
+  </div>
+  <!--Footer-->
+  <div class="modal-footer">
+    <!-- <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
+    <button class="btn btn-primary">Register</button> -->
+  </div>
+</div>
+</div>
+</div>
+
+
+
+<br><br>
+<div class="row">
+<div class="col-sm-2">
+    <div class="dropdown">
+        <button class="button dropdown-toggle"   type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Action
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+           
+          <a class="dropdown-item" href="#">Normal Order</a>
+          <a class="dropdown-item" href="#">Order Status</a>
+          <a class="dropdown-item" href="#">Accept Order</a>
+          <a class="dropdown-item" href="#">Order Payment</a>
+          <a class="dropdown-item" href="#">Payment Staus</a>
+        </div>
+      </div>
+</div>
+<div class="col-sm-4">
+  <button class="button">Transfer Ownership</button>
+</div>
+</div>

@@ -1,0 +1,18 @@
+<nav class="navbar navbar-light bg-light" style="background-color:#ebedef!important">
+    <a class="navbar-brand" href="#">
+        <img src="assets/img/logo.png" width="44" height="44" alt="">
+    </a>
+    <div class="nav navbar-nav navbar-right" style="display:inline;">
+        <div style="display: inline-block" *ngIf=Auth.isLoggedIn()>
+            <div style="display: inline-block">
+                {{name}}
+            </div>
+            <div style="display: inline-block">
+                <a class="nav-link" (click)="setlogout()">
+                    <i class="fa fa-sign-out" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</nav>

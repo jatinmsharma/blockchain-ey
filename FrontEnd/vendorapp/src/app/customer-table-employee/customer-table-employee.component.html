@@ -1,0 +1,58 @@
+<br>
+<br>
+<div class="col-md-12">
+    <div class="card" style="  overflow: auto;">
+        <!-- <div class="card-header card-header-danger">
+            <h4 class="card-title ">Employee</h4>
+            <p class="card-category"> Employee Details</p>
+        </div> -->
+        <div class="card-body">
+            <ng-container>
+                <div class="mat-elevation-z8 ">
+                    <div class="table-specification">
+                        <table mat-table [dataSource]="dataSource" class="table-responsive">
+                            <!-- <ng-container matColumnDef="id" >
+                                                    <th mat-header-cell *matHeaderCellDef> Employee ID </th>
+                                                    <td mat-cell *matCellDef="let element" > {{element.ID}}&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    </td>
+                                                </ng-container> -->
+                            <ng-container matColumnDef="name">
+                                <th mat-header-cell *matHeaderCellDef> Name </th>
+                                <td mat-cell *matCellDef="let element"> {{element.name}}&nbsp;&nbsp;&nbsp;&nbsp;
+                                </td>
+                            </ng-container>
+                            <ng-container matColumnDef="email">
+                                <th mat-header-cell *matHeaderCellDef> Email </th>
+                                <td mat-cell *matCellDef="let element"> {{element.email}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            </ng-container>
+                            <ng-container matColumnDef="contact">
+                                <th mat-header-cell *matHeaderCellDef> Contact </th>
+                                <td mat-cell *matCellDef="let element">
+                                    {{element.contactNumber}}&nbsp;&nbsp;&nbsp;&nbsp;
+                                </td>
+                            </ng-container>
+                            <!-- <ng-container matColumnDef="publicKey">
+                                <th mat-header-cell *matHeaderCellDef> Public Key </th>
+                                <td mat-cell *matCellDef="let element"> {{element.PublicKey}}&nbsp;&nbsp;&nbsp;&nbsp; </td>
+                            </ng-container> -->
+                            <ng-container matColumnDef="role">
+                                <th mat-header-cell *matHeaderCellDef> Role </th>
+                                <td mat-cell *matCellDef="let element">
+                                    <p *ngIf="element.role=='1';" style="position: absolute;">Employee</p>
+                                    <p *ngIf="element.role=='2';" style="position: absolute;">Admin</p>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                </td>
+                            </ng-container>
+
+                            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                        </table>
+                    </div>
+                    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+                </div>
+            </ng-container>
+        </div>
+
+    </div>
+</div>
+<br>

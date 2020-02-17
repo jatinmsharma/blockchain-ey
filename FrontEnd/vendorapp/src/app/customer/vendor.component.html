@@ -1,0 +1,32 @@
+<div class="cont">
+    <div class="tab_header ">
+        <ul class="nav nav-pills" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="pill" (click)="vendorinfo()">
+                    <h6>About</h6>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="pill" (click)="  employee()">
+                    <h6>Employee</h6>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="pill" (click)="vendortable()">
+                    <h6>Table List</h6>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="pill" (click)="vendorcustomer()">
+                    <h6>Customer</h6>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="tab_body">
+
+    <router-outlet></router-outlet>
+    <br>
+</div>

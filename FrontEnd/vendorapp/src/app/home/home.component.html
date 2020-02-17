@@ -1,0 +1,53 @@
+<nav class="navbar navbar-light bg-light" data-toggle="collapse">
+
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    <a class="navbar-brand" href="#">
+        <img src="assets/img/logo.png" width="44" height="44" alt="">
+    </a>
+    <div class="collapse navbar-collapse navbar-right" id="#myNavbar" style="display:inline;">
+        <div style="display: inline-block" *ngIf=Auth.isLoggedIn()>
+            <div style="display: inline-block">
+                {{name}}
+            </div>
+            <div style="display: inline-block">
+                <a class="nav-link" (click)="setlogout()">Logout </a>
+            </div>
+        </div>
+
+    </div>
+</nav>
+<div class="container">
+    <div style="text-align:center;margin-top:70px;">
+        <h1>
+            EY Blockchain
+        </h1><br>
+        <div class="container" id="heading">
+            <h4>Supply-Chain </h4>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>
+<br><br>
+<div class="wrapper fadeInDown">
+    <div id="formContent" style="padding-bottom: 5px">
+        <!-- Tabs Titles -->
+        <!-- Icon -->
+        <div class="fadeIn first">
+            <br><br>
+        </div>
+        <!-- Login Form -->
+        <form (submit)="loginUser($event)">
+            <!-- <input type="text" id="username" class="fadeIn second" name="login" placeholder="Enter Username" value=""> -->
+            <input type="text" id="PrivateKey" class="fadeIn third" name="login" placeholder="Enter PrivateKey" value="" style="margin-bottom:20px;">
+            <button class="btn btn-danger" style="margin-bottom:20px;">Login</button>
+            <!--[routerLink]="['/vendor']"-->
+        </form>
+        <!-- <div>
+            <p class="note" (click)="download()">Generate Public-Private KeyPair</p>
+        </div> -->
+    </div>
+</div>

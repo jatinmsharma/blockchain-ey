@@ -1,0 +1,35 @@
+orderNumber;vendor__name;customer__employeeName;customer__addressShipping;customer__addressBilling;customer__GSTNumber;PO_Number;PO_Date;orderDate;orderAmount;orderStatus;comment;goodsService__name;goodsService__quantity;goodsService__rate
+<<<<<<< HEAD
+O_0111;Celebal;EYAdmin1;Jaipur;Jaipur;GST1010;PO_0101;23012019;23012019;750000;1;Order Creator;Senior DATA Scientist;1;300000
+;;;;;;;;;;;;ML Developer;1;250000
+;;;;;;;;;;;;BI Developer;1;200000
+O_0112;Celebal;EYAdmin1;udaipur;Jaipur;GST1010;PO_0102;24012019;23012019;1400000;1;Order Creator;DB Admin;1;250000
+;;;;;;;;;;;;Senior DATA Scientist;3;900000
+;;;;;;;;;;;;Data Engineer;1;250000
+O_0113;Celebal;EYAdmin1;Jaipur;Jaipur;GST1010;PO_0103;23012019;23042019;550000;1;Order Creator;Senior DATA Scientist;1;300000
+;;;;;;;;;;;;ML Developer;2;250000
+O_0114;Celebal;EYAdmin1;Jaipur;kota;GST1010;PO_0104;23012019;23012019;1100000;1;Order Creator;DB Admin;1;250000
+;;;;;;;;;;;;Senior DATA Scientist;3;600000
+;;;;;;;;;;;;Data Engineer;1;250000
+O_0115;Celebal;EYAdmin1;pali;Jaipur;GST1010;PO_0104;23112018;23012019;500000;1;Order Creator;Senior DATA Scientist;1;300000
+;;;;;;;;;;;;BI Developer;1;200000
+O_0116;Celebal;EYAdmin1;Jaipur;Jaipur;GST1010;PO_0105;23012019;23012019;1600000;1;Order Creator;DB Admin;1;250000
+=======
+AIO_1101;Celebal;EYAdmin1;Jaipur;Jaipur;GST1010;PO_0101;23012019;23012019;750000;1;Order Creator;Senior DATA Scientist;1;300000
+;;;;;;;;;;;;ML Developer;1;250000
+;;;;;;;;;;;;BI Developer;1;200000
+AIO_1102;Celebal;EYAdmin1;udaipur;Jaipur;GST1010;PO_0102;24012019;23012019;1400000;1;Order Creator;DB Admin;1;250000
+;;;;;;;;;;;;Senior DATA Scientist;3;900000
+;;;;;;;;;;;;Data Engineer;1;250000
+AIO_1103;Celebal;EYAdmin1;Jaipur;Jaipur;GST1010;PO_0103;23012019;23042019;550000;1;Order Creator;Senior DATA Scientist;1;300000
+;;;;;;;;;;;;ML Developer;2;250000
+AIO_1104;Celebal;EYAdmin1;Jaipur;kota;GST1010;PO_0104;23012019;23012019;1100000;1;Order Creator;DB Admin;1;250000
+;;;;;;;;;;;;Senior DATA Scientist;3;600000
+;;;;;;;;;;;;Data Engineer;1;250000
+AIO_1105;Celebal;EYAdmin1;pali;Jaipur;GST1010;PO_0104;23112018;23012019;500000;1;Order Creator;Senior DATA Scientist;1;300000
+;;;;;;;;;;;;BI Developer;1;200000
+AIO_1106;Celebal;EYAdmin1;Jaipur;Jaipur;GST1010;PO_0105;23012019;23012019;1600000;1;Order Creator;DB Admin;1;250000
+>>>>>>> 8de5c6b8b14dbf6e2ea504b3d46923934d5ba989
+;;;;;;;;;;;;Senior DATA Scientist;4;900000
+;;;;;;;;;;;;ML Developer;1;250000
+;;;;;;;;;;;;BI Developer;1;200000

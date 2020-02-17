@@ -1,0 +1,25 @@
+{
+  "name": "EY-Asset-chain-client",
+  "version": "0.0.0",
+  "description": "A simple browser based blockchain client",
+  "main": "",
+  "author": "Kamal Kishor Mehra",
+  "scripts": {
+    "build": "./node_modules/webpack/bin/webpack.js"
+  },
+  "dependencies": {
+    "atob": "^2.1.2",
+    "body-parser": "^1.18.3",
+    "csv-parser": "^2.3.0",
+    "express": "^4.16.4",
+    "fs": "0.0.1-security",
+    "jquery": "^3.2.1",
+    "multer": "^1.4.1",
+    "nano": "^8.1.0",
+    "request": "^2.88.0",
+    "sawtooth-sdk": "^1.0.5"
+  },
+  "devDependencies": {
+    "webpack": "^3.5.4"
+  }
+}

@@ -1,0 +1,446 @@
+{
+	"info": {
+		"_postman_id": "ce013455-15c8-4ff8-9a99-85e772c0a684",
+		"name": "vendor-customer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "generateKey",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/generateKey",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"generateKey"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "batch_statuses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8008/batch_statuses?id=1062c342662de0f3571e9fd4eaf20f322a1ab91ab10f32e9603754aea502bac530cf4543805de852ea0916a8ec2bf3b556cc66ceeb3d8d98feea631cd7eb3927&wait",
+					"host": [
+						"localhost"
+					],
+					"port": "8008",
+					"path": [
+						"batch_statuses"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1062c342662de0f3571e9fd4eaf20f322a1ab91ab10f32e9603754aea502bac530cf4543805de852ea0916a8ec2bf3b556cc66ceeb3d8d98feea631cd7eb3927"
+						},
+						{
+							"key": "wait",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ID Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/id/cb61fe046b61da78abde8a9948be2bd0bc28b700b9872ec86065e9bdcfb3ac162d3e13",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"id",
+						"cb61fe046b61da78abde8a9948be2bd0bc28b700b9872ec86065e9bdcfb3ac162d3e13"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Entity",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/entity",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"entity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Vendor",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"createVendor\",\n    \"payloaddata\": {\n        \"name\": \"Celebal\",\n        \"address\": \"jaipur\",\n        \"email\": \"kkm7668@gmail.com\"\n    },\n    \"public\": \"028e08a232bd02b0daba7ad9e4e963bd02a4891d78fdbf0a320c895853d4d86e99\",\n    \"private\": \"6a73fce58b6f43fc5d18b970fc5f5e77755d8c650eb9dca5ff53c4663f4f0dbc\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Employee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"registerEmployee\",\n    \"payloaddata\": {\n        \"vendorName\": \"Celebal\",\n        \"name\": \"admin1\",\n        \"email\": \"admin1@gmail.com\",\n        \"contactNumber\": 8432862796,\n        \"role\": 2,\n        \"employeeAddress\": \"02de6cfdac88bfd4dde5c54dea3f2de58767de8c48d2ae7ea23f9871a40f956c4c\"\n    },\n    \"public\": \"028e08a232bd02b0daba7ad9e4e963bd02a4891d78fdbf0a320c895853d4d86e99\",\n    \"private\": \"6a73fce58b6f43fc5d18b970fc5f5e77755d8c650eb9dca5ff53c4663f4f0dbc\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Customer Organization",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"registerCustomerOrg\",\n    \"payloaddata\": {\n        \"vendor\": {\n            \"name\": \"Celebal\"\n        },\n        \"name\": \"EY\",\n        \"address\": \"Jaipur\",\n        \"email\": \"EY@gmail.com\",\n        \"contactNumber\": 8432862796,\n        \"GSTNumber\": \"gst01010\",\n        \"publicKey\": \"027a0461fe4d5467f9ab09074b24d135e81a3afe02f655ea7add229cc06cf7be3a\"\n    },\n    \"public\": \"028e08a232bd02b0daba7ad9e4e963bd02a4891d78fdbf0a320c895853d4d86e99\",\n    \"private\": \"6a73fce58b6f43fc5d18b970fc5f5e77755d8c650eb9dca5ff53c4663f4f0dbc\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Customer Org Employee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"registerCustomerOrgEmployee\",\n    \"payloaddata\": {\n        \"orgName\": \"EY\",\n        \"name\": \"EYAdmin1\",\n        \"email\": \"EYAdmin1@gmail.com\",\n        \"contactNumber\": 8432862796,\n        \"role\": 2,\n        \"publicKey\": \"0318159c00da5983bdd23081d894f2b4d8b174a788fd9cb43841b8d4d11a6b962e\"\n    },\n    \"public\": \"027a0461fe4d5467f9ab09074b24d135e81a3afe02f655ea7add229cc06cf7be3a\",\n    \"private\": \"3a6527a952875c753595fa7afd564f3089f3498c7bd712161442581240242e9b\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Goods",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"createGoods\",\n    \"payloaddata\": {\n        \"goods\": {\n            \"type\": 2,\n            \"name\": \"Senior DATA Scientist\",\n            \"unit\": 1\n        },\n        \"vendor\": {\n            \"name\": \"Celebal\",\n            \"employeeName\": \"admin1\"\n        }\n    },\n    \"public\": \"02de6cfdac88bfd4dde5c54dea3f2de58767de8c48d2ae7ea23f9871a40f956c4c\",\n    \"private\": \"47ed114bcc5c72c3f91e76c1ee6c25fd4da978fa9a3044ad146d4806cdf5ace3\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"createOrder\",\n    \"payloaddata\": {\n        \"orderNumber\": \"o0101\",\n        \"vendor\": {\n            \"name\": \"Celebal\"\n        },\n        \"customer\": {\n            \"employeeName\": \"EYAdmin1\",\n            \"addressShipping\": \"Jaipur\",\n            \"addressBilling\": \"Jaipur\",\n            \"GSTNumber\": \"GST1010\"\n        },\n        \"PO_Number\": \"PO1010\",\n        \"PO_Date\": \"23012019\",\n        \"orderDate\": \"23012019\",\n        \"orderAmount\": 300000,\n        \"orderStatus\": 1,\n        \"comment\": \"Order Placed\",\n        \"goodsService\": [\n            {\n                \"name\": \"Senior DATA Scientist\",\n                \"quantity\": 1,\n                \"rate\": 30000\n            }\n        ]\n    },\n    \"public\": \"0318159c00da5983bdd23081d894f2b4d8b174a788fd9cb43841b8d4d11a6b962e\",\n    \"private\": \"62e7cd169d35e9d88dc16cb0c0f051474ac7ccac61b4fb4d06b25141a0bd6276\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order Status",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"orderStatus\",\n    \"payloaddata\": {\n        \"orderNumber\": \"o0101\",\n        \"vendor\": {\n            \"employeeName\": \"admin1\"\n        },\n        \"orderStatus\": 2,\n        \"comment\": \"Delivered\"\n    },\n    \"public\": \"0318159c00da5983bdd23081d894f2b4d8b174a788fd9cb43841b8d4d11a6b962e\",\n    \"private\": \"62e7cd169d35e9d88dc16cb0c0f051474ac7ccac61b4fb4d06b25141a0bd6276\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Accept Order",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"acceptOrder\",\n    \"payloaddata\": {\n        \"orderNumber\": \"o0101\",\n        \"vendor\": {\n            \"employeeName\": \"admin1\"\n        },\n        \"orderStatus\": 5,\n        \"comment\": \"Accepted\",\n        \"salesServiceTaxAmount\": 1000,\n        \"discount\": {\n            \"Senior DATA Scientist\": 10\n        }\n    },\n    \"public\": \"02de6cfdac88bfd4dde5c54dea3f2de58767de8c48d2ae7ea23f9871a40f956c4c\",\n    \"private\": \"47ed114bcc5c72c3f91e76c1ee6c25fd4da978fa9a3044ad146d4806cdf5ace3\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order Status (Delivered)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"orderStatus\",\n    \"payloaddata\": {\n        \"orderNumber\": \"o0101\",\n        \"vendor\": {\n            \"employeeName\": \"admin1\"\n        },\n        \"orderStatus\": 6,\n        \"comment\": \"Delivered\"\n    },\n    \"public\": \"0318159c00da5983bdd23081d894f2b4d8b174a788fd9cb43841b8d4d11a6b962e\",\n    \"private\": \"62e7cd169d35e9d88dc16cb0c0f051474ac7ccac61b4fb4d06b25141a0bd6276\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order Payment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"orderPayment\",\n    \"payloaddata\": {\n        \"orderNumber\": \"o0101\",\n        \"vendor\": {\n            \"employeeName\": \"admin1\"\n        },\n        \"invoiceNumber\": \"Inv0101\",\n        \"invoiceDate\": \"28012019\",\n        \"invoiceAmount\": 271000,\n        \"paymentStatus\": 1,\n        \"comment\": \"Generate\"\n    },\n    \"public\": \"02de6cfdac88bfd4dde5c54dea3f2de58767de8c48d2ae7ea23f9871a40f956c4c\",\n    \"private\": \"47ed114bcc5c72c3f91e76c1ee6c25fd4da978fa9a3044ad146d4806cdf5ace3\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Order Payment Status",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"orderPaymentStatus\",\n    \"payloaddata\": {\n        \"orderNumber\": \"o0101\",\n        \"paymentStatus\": 2,\n        \"comment\": \"Payment Done\"\n    },\n    \"public\": \"0318159c00da5983bdd23081d894f2b4d8b174a788fd9cb43841b8d4d11a6b962e\",\n    \"private\": \"62e7cd169d35e9d88dc16cb0c0f051474ac7ccac61b4fb4d06b25141a0bd6276\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transfer Order Ownership",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"transferOwnership\",\n    \"payloaddata\": {\n        \"orderNumber\": \"o0101\",\n        \"newOwnerPublicKey\": \"03fc5a91ea0b353b65f0e35a74bb127eff336f81ba3d61e8e0d115af43d8c6175f\"\n    },\n    \"public\": \"0318159c00da5983bdd23081d894f2b4d8b174a788fd9cb43841b8d4d11a6b962e\",\n    \"private\": \"62e7cd169d35e9d88dc16cb0c0f051474ac7ccac61b4fb4d06b25141a0bd6276\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,31 @@
+.button {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 20px 26px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  mat-checkbox {
+    color: white;
+
+}
+.tab_model{
+  /* padding:5px; */
+  word-break: break-word;
+  border-radius: 7px;
+  width: 100%;
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ text-align: left;
+ margin-top: 15px;
+}
+/* .mat-checkbox-background {
+  background-color: white;
+} */
+.tab_body{
+  width:50%;
+}

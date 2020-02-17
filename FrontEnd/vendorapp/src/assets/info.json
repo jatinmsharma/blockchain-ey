@@ -1,0 +1,10 @@
+{
+    "action": "createVendor",
+    "payloaddata": {
+        "name": "Celebal",
+        "address": "jaipur",
+        "email": "kkm7668@gmail.com"
+    },
+    "public": "028e08a232bd02b0daba7ad9e4e963bd02a4891d78fdbf0a320c895853d4d86e99",
+    "private": "6a73fce58b6f43fc5d18b970fc5f5e77755d8c650eb9dca5ff53c4663f4f0dbc"
+}

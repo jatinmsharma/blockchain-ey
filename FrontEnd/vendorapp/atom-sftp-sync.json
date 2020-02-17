@@ -1,0 +1,10 @@
+{
+    "type": "sftp",
+    "host": "52.187.53.56",
+    "user": "celebal",
+    "password": "Celebal@12345",
+    "port": "22",
+    "remotePath": "/home/celebal/vendorapp",
+    "uploadOnSave": false,
+    "uploadConfigFile": false
+}

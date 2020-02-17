@@ -1,0 +1,50 @@
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="assets/img/logo.png" width="44" height="44" alt="">
+
+    </a>
+
+    <div class="nav navbar-nav navbar-right" style="display:inline;">
+        <div style="display: inline-block">
+            <div style="display: inline-block">
+                {{name}}
+            </div>
+            &nbsp;
+            <div style="display: inline-block">
+                <a class="nav-link" (click)="setlogout()">
+                    <i class="fa fa-sign-out fa-lg" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+
+
+    </div>
+
+</nav>
+<br>
+<div class="cont">
+    <div class="tab_header ">
+        <ul class="nav nav-pills" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-toggle="pill" (click)="employee()" style="cursor:pointer;">
+                    <h6>About</h6>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="pill" (click)="vendortable()" style="cursor:pointer;">
+                    <h6>Goods/Services</h6>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="pill" (click)="vendorinfo()" style="cursor:pointer;">
+                    <h6>Order</h6>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="tab_body">
+    <br>
+    <router-outlet></router-outlet>
+    <br>
+</div>

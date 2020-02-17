@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "1d449cdf-279b-43ef-a922-87d6bcbb7881",
+		"name": "couchdb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Find Data",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"db\": \"users\",\n    \"query\": {\n        \"selector\": {\n            \"userType\": 2\n        },\n        \"fields\": [\n            \"ID\",\n            \"name\",\n            \"address\",\n            \"email\",\n            \"owner\",\n            \"userType\"\n        ]\n    }\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/find",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"find"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Insert Data",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"db\": \"users\",\n    \"id\": \"cb61fe060beccb2af99def04496c081c8113f623534173efec946d6034bc8e12374d52\",\n    \"data\": {\n        \"name\": \"EYAdmin1\",\n        \"email\": \"EYAdmin1@gmail.com\",\n        \"contactNumber\": 8432862796,\n        \"publicKey\": \"0318159c00da5983bdd23081d894f2b4d8b174a788fd9cb43841b8d4d11a6b962e\",\n        \"role\": 2,\n        \"customerID\": \"cb61fe05d09cc6ab08ba135054b707f08a8140a64ce5034af3aaa81046eaf2a27f41ee\",\n        \"customerName\": \"EY\",\n        \"GSTNumber\": \"gst01010\",\n        \"userType\": 4,\n        \"owner\": \"0318159c00da5983bdd23081d894f2b4d8b174a788fd9cb43841b8d4d11a6b962e\"\n    }\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/insert",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"insert"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

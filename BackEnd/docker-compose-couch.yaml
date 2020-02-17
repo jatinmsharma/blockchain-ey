@@ -1,0 +1,17 @@
+version: '2.1'
+
+networks:
+  couchdb_net:
+
+services:
+  sawtooth-couchdb:
+    container_name: sawtooth-couchdb
+    image: couchdb
+    environment:
+      - COUCHDB_USER=admin
+      - COUCHDB_PASSWORD=admin
+      - NODENAME=0.0.0.0
+    ports:
+      - "5984:5984"
+#    networks: 
+#      - couchdb_net

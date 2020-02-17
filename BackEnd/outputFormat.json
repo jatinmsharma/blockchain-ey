@@ -1,0 +1,104 @@
+{
+    "vendor": [{
+        "vendor": {
+            "ID": "cb61fe003e9d1304b01b40de32ad2fa36116769536c42c27e64a942997b16cc504f2d7",
+            "name": "Celebal",
+            "address": "jaipur",
+            "email": "kkm7668@gmail.com"
+        },
+        "owner": "028e08a232bd02b0daba7ad9e4e963bd02a4891d78fdbf0a320c895853d4d86e99"
+    }],
+    "employee": [{
+        "employee": {
+            "ID": "cb61fe046b61da78abde8a9948be2bd0bc28b700b9872ec86065e9bdcfb3ac162d3e13",
+            "name": "admin1",
+            "email": "admin1@gmail.com",
+            "contactNumber": 8432862796,
+            "publicKey": "02de6cfdac88bfd4dde5c54dea3f2de58767de8c48d2ae7ea23f9871a40f956c4c",
+            "role": 2
+        },
+        "vendor": {
+            "name": "Celebal"
+        }
+    }],
+    "customerOrg": [{
+        "custumer": {
+            "ID": "cb61fe05d09cc6ab08ba135054b707f08a8140a64ce5034af3aaa81046eaf2a27f41ee",
+            "name": "EY",
+            "address": "Jaipur",
+            "email": "EY@gmail.com",
+            "contactNumber": 8432862796,
+            "GSTNumber": "gst01010",
+            "publicKey": "027a0461fe4d5467f9ab09074b24d135e81a3afe02f655ea7add229cc06cf7be3a"
+        },
+        "owner": "028e08a232bd02b0daba7ad9e4e963bd02a4891d78fdbf0a320c895853d4d86e99"
+    }],
+    "customerEmployee": [{
+        "employee": {
+            "ID": "cb61fe06bd397c2e20959c362e6a812387d92efb80280e4f1d4f04b4e2fc86d06a9241",
+            "name": "EYAdmin1",
+            "email": "EYAdmin1@gmail.com",
+            "contactNumber": 8432862796,
+            "PublicKey": "0318159c00da5983bdd23081d894f2b4d8b174a788fd9cb43841b8d4d11a6b962e",
+            "role": 2
+        },
+        "customer": {
+            "ID": "cb61fe05d09cc6ab08ba135054b707f08a8140a64ce5034af3aaa81046eaf2a27f41ee",
+            "name": "EY"
+        }
+    }],
+    "goods": [{
+        "goods": {
+            "ID": "cb61fe016b36c723f90957200d4d3d52cff393f1e703723bf19ef4996954ef469a0197",
+            "name": "Senior DATA Scientist",
+            "unit": 1
+        },
+        "vendor": {
+            "name": "Celebal",
+            "creator": "admin1"
+        },
+        "owner": "02de6cfdac88bfd4dde5c54dea3f2de58767de8c48d2ae7ea23f9871a40f956c4c"
+    }],
+    "order": [{
+        "ID": "cb61fe03698917f54f85cd80533db4998947e8e6efb58cef251b23a996d03851d94a6a",
+        "orderNumber": "o0101",
+        "vendor": {
+            "name": "Celebal"
+        },
+        "customer": {
+            "ID": "cb61fe05d09cc6ab08ba135054b707f08a8140a64ce5034af3aaa81046eaf2a27f41ee",
+            "name": "EY",
+            "addressShipping": "Jaipur",
+            "addressBilling": "Jaipur",
+            "employeeID": "cb61fe06bd397c2e20959c362e6a812387d92efb80280e4f1d4f04b4e2fc86d06a9241"
+        },
+        "PO_Number": "PO1010",
+        "PO_Date": "23012019",
+        "orderDate": "23012019",
+        "orderAmount": 300000,
+        "orderStatus": {
+            "comment": "Accepted",
+            "status": 5,
+            "employeeID": "02de6cfdac88bfd4dde5c54dea3f2de58767de8c48d2ae7ea23f9871a40f956c4c"
+        },
+        "goodsService": [{
+            "name": "Senior DATA Scientist",
+            "quantity": 1,
+            "rate": 30000,
+            "discount": 10
+        }],
+        "orderHandler": "03fc5a91ea0b353b65f0e35a74bb127eff336f81ba3d61e8e0d115af43d8c6175f",
+        "owner": "0318159c00da5983bdd23081d894f2b4d8b174a788fd9cb43841b8d4d11a6b962e",
+        "salesServiceTaxAmount": 1000,
+        "orderPayment": {
+            "invoiceNumber": "Inv0101",
+            "invoiceDate": "28012019",
+            "invoiceAmount": 271000,
+            "status": {
+                "paymentStatus": 2,
+                "comment": "Payment Done",
+                "updater": "0318159c00da5983bdd23081d894f2b4d8b174a788fd9cb43841b8d4d11a6b962e"
+            }
+        }
+    }]
+}
